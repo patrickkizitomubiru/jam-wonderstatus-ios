@@ -1,0 +1,8 @@
+node_modules/
+www/
+dist/
+*.log
+*.tmp
+.DS_Store
+*.xcodeproj/
+*.xcworkspace/

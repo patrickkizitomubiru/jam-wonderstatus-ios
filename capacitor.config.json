@@ -1,0 +1,13 @@
+{
+  "appId": "com.jam.wonderstatus",
+  "appName": "JAM_WonderStatus",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "ios": {
+    "contentInset": "always",
+    "allowsLinkPreview": false
+  }
+}

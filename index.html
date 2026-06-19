@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>JAM_WonderStatus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div class="toolbar">
+      <button id="importBtn">📁 Import</button>
+      <button id="enhanceBtn">✨ Enhance</button>
+      <button id="exportBtn">💾 Save</button>
+      <button id="shareBtn">📤 Share</button>
+      <button id="propertyDetailsBtn">🏷️ Details</button>
+      <span class="spacer"></span>
+      <label>Watermark <input type="checkbox" id="watermarkToggle" checked></label>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="mainCanvas"></canvas>
+      <div id="enhanceProgress" class="progress-bar hidden">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        <span id="progressText">🧠 Enhancing…</span>
+      </div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <h3>📸 Gallery <span id="imageCounter">(0/6)</span></h3>
+      <div id="galleryContainer"></div>
+      <button id="clearAllBtn" style="background:#e74c3c; color:white;">Clear All</button>
+
+      <hr>
+
+      <h3>🏷️ Property Info</h3>
+      <label>Name: <input type="text" id="propName" value="Sunset Villa"></label>
+      <label>Location: <input type="text" id="propLocation" value="Malibu, CA"></label>
+      <label>Price: <input type="text" id="propPrice" value="$299/night"></label>
+      <label>Services: <input type="text" id="propServices" value="Pool, Wi‑Fi"></label>
+      <label>Directions: <input type="text" id="propDirections" value="15 min from LAX"></label>
+
+      <hr>
+
+      <h3>🎨 Card Style</h3>
+      <label>Bg: <input type="color" id="cardBgColor" value="#000000"></label>
+      <label>Text: <input type="color" id="cardTextColor" value="#ffffff"></label>
+      <label>Font:
+        <select id="fontSelect">
+          <option value="'Segoe UI', sans-serif">Segoe UI</option>
+          <option value="'Roboto', sans-serif">Roboto</option>
+        </select>
+      </label>
+
+      <hr>
+
+      <h3>🖼️ Logo</h3>
+      <input type="file" id="logoUpload" accept="image/*">
+      <div id="logoPreview"></div>
+      <button id="clearLogoBtn">Clear Logo</button>
+    </div>
+
+    <!-- Property Details Modal -->
+    <div id="propertyModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn" id="closePropertyModal">&times;</span>
+        <h3>Property Details</h3>
+        <label>Name: <input type="text" id="modalPropName" value="Sunset Villa"></label>
+        <label>Location: <input type="text" id="modalPropLocation" value="Malibu, CA"></label>
+        <label>Price: <input type="text" id="modalPropPrice" value="$299/night"></label>
+        <label>Services: <input type="text" id="modalPropServices" value="Pool, Wi‑Fi"></label>
+        <label>Directions: <input type="text" id="modalPropDirections" value="15 min from LAX"></label>
+        <button id="savePropertyBtn" style="background:#3498db; color:white;">💾 Save</button>
+      </div>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
